@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-blue
+  namespace: bank-app
+  labels:
+    version: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app
+      namespace: bank-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+        namespace: bank-app
+        version: blue
+    spec:
+      containers:
+        - name: node-app
+          image: matheusmatias/node-project:0.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
