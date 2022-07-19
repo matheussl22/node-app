@@ -14,13 +14,13 @@ spec:
           prefix: /api
       route:
       - destination:
-          host: user
+          host: api
           port:
             number: 3000
           subset: blue
         weight: 90
       - destination:
-          host: user
+          host: api
           port:
             number: 3000
           subset: green

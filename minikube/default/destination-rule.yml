@@ -4,7 +4,7 @@ metadata:
   name: node-service-rule
   namespace: bank-app
 spec:
-  host: node-service
+  host: api
   subsets:
   - name: blue
     labels:
