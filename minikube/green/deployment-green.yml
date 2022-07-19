@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: balance-app-green
-  namespace: money-app
+  name: node-app-green
+  namespace: bank-app
   labels:
     version: green
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
-      app: balance-app
-      namespace: money-app
+      app: node-app
+      namespace: bank-app
   template:
     metadata:
       labels:
-        app: balance-app
-        namespace: money-app
+        app: node-app
+        namespace: bank-app
         version: green
     spec:
       containers:
-        - name: balance-app
-          image: wesleyfuchter/balance-service:green
+        - name: node-app
+          image: matheusmatias/node-project:0.0.3
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 3000

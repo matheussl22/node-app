@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: matheusmatias/node-project:0.0.1
+          image: matheusmatias/node-project:0.0.3
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

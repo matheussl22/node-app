@@ -6,7 +6,7 @@ const { transactionRouter } = require("./routes/transaction-router");
 
 // Constants
 const PORT = 3000;
-const DB = 'mongodb://root:example@192.168.16.100:27017/?authMechanism=DEFAULT';
+const DB = 'mongodb://root:example@host.minikube.internal:27017/?authMechanism=DEFAULT';
 
 const server = express();
 

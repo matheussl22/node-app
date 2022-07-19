@@ -1,6 +1,6 @@
 //queue.js
 function connect(){
-    return require('amqplib').connect("amqp://192.168.16.100")
+    return require('amqplib').connect("amqp://host.minikube.internal")
                              .then(conn => conn.createChannel());
   }
   

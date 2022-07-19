@@ -1,28 +1,28 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: balance-service-stage-green
-  namespace: money-app
+  name: node-service-stage-green
+  namespace: bank-app
 spec:
   gateways:
-    - money-app-gateway
+    - bank-app-gateway
   hosts:
     - "*"
   http:
     - match:
       - uri:
-          prefix: /balance-service
+          prefix: /api
       route:
       - destination:
-          host: balance-service
+          host: api
           port:
-            number: 8080
+            number: 3000
           subset: blue
         weight: 30
       - destination:
-          host: balance-service
+          host: api
           port:
-            number: 8080
+            number: 3000
           subset: green
         weight: 70
     

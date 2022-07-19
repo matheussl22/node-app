@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
   _id: {type: Number},
   name: {type: String},
   initialBalance: {type: Number},
+  hostName: {type: String},
 });
 
 // Not good practice, just for a graduation activity
